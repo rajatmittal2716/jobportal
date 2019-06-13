@@ -1,0 +1,55 @@
+{
+     "_id" : 1,
+    "title" : "The Pillars of Society", 
+    "artist" : "Grosz", 
+    "year" : 1926,
+    "price" : NumberDecimal("199.99")
+}
+{
+     "_id" : 2,
+     "title" : "Melancholy III",
+     "artist" : "Munch",
+     "year" : 1902,
+    "price" : NumberDecimal("280.00")
+}
+{ 
+    "_id" : 3, 
+    "title" : "Dancer",
+     "artist" : "Miro", 
+     "year" : 1925,
+    "price" : NumberDecimal("76.04")
+}
+
+
+db.artwork.aggregate( [
+  {
+    $bucket: {
+      groupBy: "$price",
+      boundaries: [ 0, 200, 400 ],
+      default: "Other",
+      output: {
+        "count": { $sum: 1 },
+        "titles" : { $push: "$title" }
+      }
+    }
+  }
+] )
+
+{
+  "_id" : 0,                                                                                            
+  "count" : 4,                                              
+  "titles" : [                                              
+    "The Pillars of Society",                                               
+    "Dancer",                                               
+    "The Great Wave off Kanagawa",                                              
+    "Blue Flower"                                               
+  ]
+}
+{
+  "_id" : 200,
+  "count" : 2,
+  "titles" : [
+    "Melancholy III",
+    "Composition VII"
+  ]
+}

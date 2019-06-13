@@ -1,0 +1,27 @@
+<!-- <div class="login-panel">
+  <div class="heading">
+    <h1>Login</h1>
+  </div>
+  <form [formGroup]="loginForm" (submit)="onLogin()">
+    <input type="tel" formControlName="phone" placeholder="Phone Number">
+    <input type="password" formControlName="password" placeholder="Password">
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+</div> -->
+
+<div class="login-panel">
+    <div class="heading">
+      <h1>Company Login Panel</h1>
+    </div>
+    <form [formGroup]="loginForm" (submit)="onLogin()">
+      <input type="email" formControlName="email" placeholder="Email" class="inputbox">
+      <p class="error" *ngIf="loginForm.controls['email'].hasError('required') && isSubmited">
+        Please enter email
+      </p>
+      <input type="password" formControlName="password" placeholder="Password"class="inputbox">
+      <button type="submit">Login</button>
+      <button style="margin-left:5px" (click)="registration()">Register</button>
+    </form>
+  </div>
+  
+  

@@ -1,0 +1,53 @@
+.login-panel {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+
+    .heading {
+        color : #5EB336;
+    }
+    
+    form {
+        input:not(:last-child), div > input {
+            width: 100%;
+            font-size: 1.2rem;
+            margin-bottom: 48px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #66E851;
+            color: #666;
+        }
+
+        button {
+            padding: 10px;
+            text-transform: uppercase;
+            // background: transparent;
+            border: 1px solid #5EB336;
+            color : white;
+            background-color: #5EB336;
+
+
+            &:hover {
+                cursor: pointer;
+                color : #fff;
+                background: #5EB336;
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                cursor: default;
+                background: #5EB336;
+                color: #fff;
+            }
+        }
+    }
+}
+.inputbox{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

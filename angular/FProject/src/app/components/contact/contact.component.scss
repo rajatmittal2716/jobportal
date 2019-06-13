@@ -1,0 +1,47 @@
+.maindiv{
+   
+   .Address{
+    width: 500px;
+
+    background-color:transparent;
+    &:hover
+    {
+        margin-left: 500px;
+        transition: 3s;
+        transform: scale(1.2);
+    }   
+}
+    .contactInfo{
+        width: 500px;
+
+        background-color:transparent;
+        &:hover
+        {
+            margin-left: 500px;
+            transition: 3s;
+            transform: scale(1.2);
+        }
+
+    }
+    position: absolute;
+    font-size: 1.2em;
+    .Mailid{
+        background-color:transparent;
+        color: #69b6ae;
+        margin-left: 500px;
+        &:hover{
+            margin-left: 500px;
+            transition: 3s;
+            transform: scale(1.2);
+            
+                }
+    }
+    a{
+        // &:hover{
+        //     transition: 2s;
+        //     transform: scale(1.1);
+            
+                // }
+        text-decoration: none;
+    }
+}

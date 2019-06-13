@@ -1,0 +1,62 @@
+.login-panel {
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+
+    .heading {
+      color: skyblue;
+        animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+
+    }
+    
+    form {
+        input:not(:last-child) {
+            width: 100%;
+            font-size: 1.2rem;
+            margin-bottom: 48px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid lightblue;
+            color: #666;
+        }
+
+        button {
+            padding: 10px;
+            text-transform: uppercase;
+            // background: transparent;
+            border: 1px solid rgb(24, 88, 131);
+            color : rgb(24, 88, 131);
+
+            &:hover {
+                cursor: pointer;
+                color : #fff;
+                background: rgb(24, 88, 131);
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                cursor: default;
+                background: rgb(54, 62, 179);
+                color: #fff;
+            }
+        }
+    }
+}
+.inputbox{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+@keyframes example {
+    from {color: red;}
+    to {color: yellow;}
+  }

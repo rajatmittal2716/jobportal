@@ -1,0 +1,44 @@
+<div  class="searchbox">
+  
+<div>Searching For Job!</div>
+<div>
+  <form [formGroup]="searchForm" (submit)="Search()">
+  <input type="text" placeholder="Search.." formControlName="JobType">
+  
+  <button type="submit" ><i class="fa fa-search search"></i></button>
+</form>
+</div>
+</div>
+<div class="container1">
+  <div *ngIf="jobs.length" class="lawns-section row">
+      <div *ngFor="let job of jobs" class="lawn-tile col-md-4">
+           
+        <div class="company " class="companyName">
+             <span>Company Name:</span>{{job.d.companyname}}
+        </div>
+           <div>
+                  <div>
+                     <span>Vacancies:</span> {{job.d.Vacancies}} 
+                 </div>
+                 <div>
+                   <span>JOBTYPE:</span>{{job.d.JobType}}
+                </div>
+                <div>
+                   <span>Total Employees</span>{{job.d.Employees}}
+               </div>
+                <div>
+                    <span>Total salary</span>{{job.d.salary}}/month
+              </div> 
+              <div> <i class="fas fa-arrow-alt-circle-right float-right applyarrow"(click)="ApplyPost(job.d.id)"></i>
+
+                
+                  <!-- <i class="fas fa-arrow-alt-circle-right float-right"(click)="ApplyPost(job.d.id)"></i>
+
+              <i class="fas fa-eye float-right" (click)="JobDetail(job.d.id)"></i> -->
+         </div>
+
+        
+        
+       </div>
+     </div>
+</div>

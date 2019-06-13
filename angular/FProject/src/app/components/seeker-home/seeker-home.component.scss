@@ -1,0 +1,46 @@
+
+.searchbox{
+  margin-top: 5%;
+margin-left: 20%;
+height:150px;
+}
+input{
+    width: 60%;
+    // height: 50px;
+    background: rgb(231, 231, 231);
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-decoration: none;
+}
+.container1 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.1em;
+  display: grid;
+  grid-template-columns: 100% auto;
+}
+  
+  .lawn-tile
+  {
+    height:200px;
+    width:100%;
+    margin-left:20px;
+    background: rgb(172, 199, 130);
+  }
+  .companyName
+  {
+    float:left;
+    background: transparent;
+  }
+  .applyarrow:hover
+  {
+    transition: 1s;
+    transform: scale(1.2);
+    color: green;
+  }
+  .applyarrow{
+    color: rgb(43, 141, 226);margin-right: 5px;
+    
+  }

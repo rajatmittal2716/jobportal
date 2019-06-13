@@ -1,0 +1,62 @@
+
+<div class="display-area">
+  <div class="heading">
+    <h1>Jobs</h1>
+  </div>
+  <div class="options">
+      <button class="btn btn-add" id="myBtn">Add Jobs</button>
+  </div>
+  <div >
+    <span class="company">Welcome to your company</span>
+  </div>
+  <div *ngIf="!jobs.length">
+    <p>You do not post any job at the moment. If there is any Vacancies Please add some!</p>
+  </div>
+  <div *ngIf="jobs.length" class="lawns-section row">
+   <div *ngFor="let job of jobs" class="lawn-tile col-md-4">
+        <div>
+            <div class="jobtype">
+                <span >JOBTYPE:  </span>  {{job.JobType}}
+              </div>
+                
+            <div>
+          <span>Vacancies:  </span> {{job.Vacancies}}
+            </div>
+            <div>
+          <span>Total Employees:  </span>   {{job.Employees}}
+        </div>
+        <div>
+            <span>Description:  </span>   {{job.description}}
+          </div>
+          
+          <div>
+              <span>salary:  </span>   {{job.salary}}
+            </div>
+      </div>
+      <div>
+        <i class="fas fa-trash-alt float-right" (click)="deletePost(job.id)"></i>
+        <i class="fas fa-eye " (click)="JobDetail(job.id)"></i>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+  <div class="modal-content"> 
+      <form [formGroup]="JobPost" (submit)="addJobs()">
+       <title>JobType</title> <input formControlName="JobType" type="text" placeholder="JobType">
+       <title>Salary</title> <input formControlName="Salary" type="number" placeholder="Salary">
+        <title>Employees</title><input formControlName="Employees" type="number" placeholder="Number Of Employees"><br>
+        <title>Description</title>   <textarea formControlName="Description"   placeholder="Description" > Description</textarea> <br>
+        <title>Procedure</title> <textarea formControlName="Procedure" placeholder="Procedure">Procedure</textarea> <br>
+        <title>Vacancies</title> <input type="number" formControlName="Vacancies" placeholder="Vacancies">   
+        <title>Experience</title> <input type="number" formControlName="experience" placeholder="Experience">     
+        <button type="submit" class="btn-add">Add</button>
+      </form>
+    </div>
+  </div> 
+  <!-- asdfasfdsdafjmk;lasjsdaj -->

@@ -1,0 +1,35 @@
+<div *ngIf="!jobs.length">
+  <h2>No One apply for this post</h2>
+</div>
+
+<div>
+<div *ngIf="jobs.length" class="appicant row">
+   <div *ngFor="let job of jobs" class="applicant-info col-md-4">
+    
+    <div class="mailbox">
+        <i class="fas fa-trash float-left"  (click)="deleteapplication(job.id)"></i>
+            <i class="fas fa-envelope float-right mail" (click)="sendmail(job.name,job.email)"></i>
+          </div>
+            
+            <div class="jobtype">
+                <span >Name:  </span>  {{job.name}}
+            </div>
+            <div>
+                <span>Address:  </span> {{job.address}}
+            </div>
+            <div>
+              <span>Experience:  </span> {{job.experience}}
+          </div>
+          <div>
+            <span>Technology:  </span> {{job.tech}}
+        </div>
+        <div>
+          <span>Intrest:  </span> {{job.intrest}}
+      </div>
+            <div>
+               <span>Email:  </span>   {{job.email}}
+            </div>
+        </div>
+        
+  </div>
+</div>

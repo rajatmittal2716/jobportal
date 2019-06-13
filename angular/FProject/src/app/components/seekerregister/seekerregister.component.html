@@ -1,0 +1,17 @@
+<div class="login-panel">
+  <div class="heading">
+    <h1>User Register</h1>
+  </div>
+  <form [formGroup]="registerForm" (submit)="onRegister()">
+      <input type="text" formControlName="name" placeholder="Name" class="inputbox">
+      <input type="number" formControlName="contact"  placeholder="Contact Number"class="inputbox">
+      <input type="email" formControlName="email" placeholder="Email"class="inputbox">
+     <input type="text" (change)="addressChange($event)" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" formControlName="address" placeholder="Address"class="inputbox">
+     <input type="password" formControlName="password" placeholder="Password" class="inputbox">
+     <input type="number" formControlName="exprerience" placeholder="Experience" class="inputbox">
+     <input type="text" formControlName="position" placeholder="position" class="inputbox">
+     <input type="text" formControlName="technology" placeholder="Technology" class="inputbox">
+     <input type="text" formControlName="intrestedin" placeholder="intrestedin" class="inputbox">
+    <button type="submit" [disabled]="!registerForm.valid" style="border-block-end-color: skyblue">Register</button>
+  </form>
+</div>  

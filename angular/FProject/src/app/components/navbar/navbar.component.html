@@ -1,0 +1,38 @@
+<header>
+    <div class="container">
+      <div class="logo">
+         <div class="image"> <img src="../../../assets/1st.png" alt="image"></div> <a  class="Title" routerLink="" >JOBS </a>
+      </div>
+      
+      <nav>
+        <ul>
+            <li><a routerLink="contactUs">contactUs</a></li>
+          <li><a routerLink="/loginpage" *ngIf="(!authService.isAuthenticated() && !authService.isLogin())">Login</a></li>
+          <li><a routerLink="/registration" *ngIf="!authService.isAuthenticated()&& !authService.isLogin()">SignIn</a></li>
+          <!-- Company dashboard -->
+          <li ><a routerLink="/Dashboard" *ngIf="authService.isAuthenticated() && !authService.isLogin()">Dashboard</a></li>
+          <!-- seeker Dashboard -->
+          <li ><a routerLink="/seeker" *ngIf=" authService.isLogin()">Dashboard</a></li>
+          <li ><a routerLink="/" (click)="onLogout()" *ngIf="authService.isAuthenticated() || authService.isLogin()"><i class="fas fa-sign-out-alt" style="margin-top:5px;"></i>Logout</a></li>
+          
+          <!-- searchbox -->
+        <!-- <li>  <form [formGroup]="loginForm" (submit)="onLogin()"*ngIf="authService.isAuthenticated() && authService.isLogin()">
+          <input type="text" placeholder="Search Job" class="searchbox" >
+          <button  value="Search" class="button">Search</button>
+        </form></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--  *ngIf="!authService.isAuthenticated()"
+  *ngIf="!authService.isAuthenticated()"
+  *ngIf="authService.isAuthenticated()"
+  *ngIf="authService.isAuthenticated()"
+
+
+   <li><a routerLink="/company/login" *ngIf="!authService.isAuthenticated()"><i class="fas fa-building"></i>Login</a></li>
+          <li><a routerLink="/seeker/login" *ngIf="!authService.isAuthenticated()"><i class="fas fa-users"></i>SignIn</a></li>
+          <li><a routerLink="/company/register" *ngIf="!authService.isAuthenticated()"><i class="fas fa-building"></i>Register</a></li>
+          <li><a routerLink="/seeker/register" *ngIf="!authService.isAuthenticated()"><i class="fas fa-users"></i>Register</a></li> 
+  -->
